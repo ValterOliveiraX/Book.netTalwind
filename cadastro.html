@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="pt-br" class="text-gray-800 antialiased">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Script do Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>Cadastro de Livros | MyLibrary</title>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<!-- Aplicando a sua imagem de fundo local ja esmaecida -->
+<body class="min-h-screen flex flex-col bg-cover bg-center bg-no-repeat bg-fixed" style="background-image: url('img/seu-fundo.jpg');">
+
+    <!-- Cabeçalho Institucional (IFMA) -->
+    <div class="bg-white/80 backdrop-blur-md border-b border-gray-200 px-6 py-4 flex items-center gap-4">
+        <img src="img/Screenshot 2026-03-26 104657.png" alt="logo IFMA" class="w-20 h-auto object-contain">
+        <div class="text-xs sm:text-sm text-gray-600 leading-relaxed">
+            <p class="font-bold text-gray-900">INSTITUTO FEDERAL DE CIÊNCIA E TECNOLOGIA DO MARANHÃO</p>
+            <p>PROF. DR. JOÃO CARLOS</p>
+            <p class="font-semibold text-emerald-700">LABORATÓRIO DE BANCO DE DADOS</p>
+            <p>Acadêmico: Valter Oliveira</p>
+        </div>
+    </div>
+
+    <!-- Conteúdo Principal -->
+    <main class="flex-grow max-w-7xl w-full mx-auto p-4 sm:p-6 space-y-6">
+        
+        <!-- Header Principal interno do Main -->
+        <header class="bg-slate-900/90 backdrop-blur-md text-white shadow-md rounded-xl">
+            <div class="px-6 py-4 flex flex-col md:flex-row justify-between items-center gap-4">
+                <h2 class="text-xl font-bold tracking-tight">Cadastro & busca de livros (book.net)</h2>
+                <nav class="flex items-center gap-6">
+                    <div class="bg-slate-800 p-2 rounded-lg border border-slate-700">
+                        <svg class="w-5 h-5 fill-emerald-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+                            <path d="M480 576L192 576C139 576 96 533 96 480L96 160C96 107 139 64 192 64L496 64C522.5 64 544 85.5 544 112L544 400C544 420.9 530.6 438.7 512 445.3L512 512C529.7 512 544 526.3 544 544C544 561.7 529.7 576 512 576L480 576zM192 448C174.3 448 160 462.3 160 480C160 497.7 174.3 512 192 512L448 512L448 448L192 448zM224 216C224 229.3 234.7 240 248 240L424 240C437.3 240 448 229.3 448 216C448 202.7 437.3 192 424 192L248 192C234.7 192 224 202.7 224 216zM248 288C234.7 288 224 298.7 224 312C224 325.3 234.7 336 248 336L424 336C437.3 336 448 325.3 448 312C448 298.7 437.3 288 424 288L248 288z"/>
+                        </svg>
+                    </div>
+                    <ul class="flex gap-5 text-sm font-medium text-slate-300">
+                        <li><a href="index.html" class="hover:text-white transition-colors">Início</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Sobre</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Serviços</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Contato</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Container do Formulário de Cadastro -->
+        <div class="bg-white/90 backdrop-blur-md p-6 rounded-xl shadow-md border border-gray-200">
+            <form action="#" method="POST" class="space-y-5">
+                
+                <!-- Grid de Inputs (2 colunas em telas médias, 3 colunas em telas grandes) -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+                    
+                    <div class="flex flex-col gap-1.5">
+                        <label for="titulo" class="text-xs font-semibold text-gray-600 uppercase">Título do Livro</label>
+                        <input type="text" id="titulo" name="titulo" placeholder="Ex: O Senhor dos Anéis" required
+                               class="px-3 py-2 bg-white border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-all text-sm">
+                    </div>
+
+                    <div class="flex flex-col gap-1.5">
+                        <label for="data" class="text-xs font-semibold text-gray-600 uppercase">Data de Cadastro</label>
+                        <input type="date" id="data" name="data"
+                               class="px-3 py-2 bg-white border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-all text-sm">
+                    </div>
+
+                    <div class="flex flex-col gap-1.5">
+                        <label for="isbn" class="text-xs font-semibold text-gray-600 uppercase">ISBN</label>
+                        <input type="text" id="isbn" name="isbn" placeholder="Ex: 978-0-06-112008-4"
+                               class="px-3 py-2 bg-white border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-all text-sm">
+                    </div>
+
+                    <div class="flex flex-col gap-1.5">
+                        <label for="autor" class="text-xs font-semibold text-gray-600 uppercase">Autor</label>
+                        <input type="text" id="autor" name="autor" placeholder="Ex: J.R.R. Tolkien" required
+                               class="px-3 py-2 bg-white border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-all text-sm">
+                    </div>
+
+                    <div class="flex flex-col gap-1.5">
+                        <label for="editora" class="text-xs font-semibold text-gray-600 uppercase">Editora</label>
+                        <input type="text" id="editora" name="editora" placeholder="Ex: HarperCollins"
+                               class="px-3 py-2 bg-white border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-all text-sm">
+                    </div>
+
+                    <div class="flex flex-col gap-1.5">
+                        <label for="genero" class="text-xs font-semibold text-gray-600 uppercase">Gênero</label>
+                        <select id="genero" name="genero"
+                                class="px-3 py-2 bg-white border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-all text-sm cursor-pointer">
+                            <option value="fantasia">Fantasia</option>
+                            <option value="ficcao">Ficção Científica</option>
+                            <option value="romance">Romance</option>
+                            <option value="biografia">Biografia</option>
+                            <option value="terror">Terror</option>
+                        </select>
+                    </div>
+
+                    <div class="flex flex-col gap-1.5">
+                        <label for="ano" class="text-xs font-semibold text-gray-600 uppercase">Ano de Publicação</label>
+                        <input type="number" id="ano" name="ano" min="1000" max="2026" placeholder="Ex: 1954"
+                               class="px-3 py-2 bg-white border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-all text-sm">
+                    </div>
+
+                    <div class="flex flex-col gap-1.5">
+                        <label for="paginas" class="text-xs font-semibold text-gray-600 uppercase">Nº de Páginas</label>
+                        <input type="number" id="paginas" name="paginas" min="1" placeholder="Ex: 1200"
+                               class="px-3 py-2 bg-white border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-all text-sm">
+                    </div>
+
+                    <div class="flex flex-col gap-1.5">
+                        <label for="idioma" class="text-xs font-semibold text-gray-600 uppercase">Idioma</label>
+                        <input type="text" id="idioma" name="idioma" placeholder="Ex: Português"
+                               class="px-3 py-2 bg-white border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-all text-sm">
+                    </div>
+
+                    <div class="flex flex-col gap-1.5 md:col-span-2 lg:col-span-3">
+                        <label for="preco" class="text-xs font-semibold text-gray-600 uppercase">Valor Estimado / Orçamento (R$)</label>
+                        <input type="number" id="preco" name="preco" step="0.01" min="0" placeholder="Ex: 89.90"
+                               class="px-3 py-2 bg-white border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-all text-sm">
+                    </div>
+                </div>
+
+                <div class="flex flex-col gap-1.5 w-full">
+                    <label for="resumo" class="text-xs font-semibold text-gray-600 uppercase">Resumo</label>
+                    <textarea id="resumo" name="resumo" rows="3" placeholder="Escreva um breve resumo do livro..."
+                              class="px-3 py-2 bg-white border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 transition-all text-sm resize-none"></textarea>
+                </div>
+                
+                <button type="submit" class="w-full sm:w-auto px-6 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-sm rounded-lg shadow-sm hover:shadow-md transition-all uppercase tracking-wider">
+                    SALVAR
+                </button>
+            </form>
+        </div>
+
+        <!-- Tabela de Dados (Livros Cadastrados) -->
+        <div class="bg-white/90 backdrop-blur-md p-6 rounded-xl shadow-md border border-gray-200 space-y-4">
+            <h2 class="text-lg font-bold text-gray-900 flex items-center gap-2">
+                <span>📖</span> Livros Cadastrados
+            </h2>
+            
+            <!-- Wrapper para scroll horizontal caso a tabela fique muito grande em telas pequenas -->
+            <div class="overflow-x-auto rounded-lg border border-gray-200 shadow-sm">
+                <table class="min-w-full divide-y divide-gray-200 text-sm text-left">
+                    <thead class="bg-slate-800 text-slate-200 font-semibold text-xs uppercase tracking-wider">
+                        <tr>
+                            <th class="px-4 py-3">Título</th>
+                            <th class="px-4 py-3">Autor</th>
+                            <th class="px-4 py-3">Editora</th>
+                            <th class="px-4 py-3">Ano</th>
+                            <th class="px-4 py-3">Gênero</th>
+                            <th class="px-4 py-3">Valor (R$)</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-200 bg-white/50">
+                        <tr class="hover:bg-slate-50 transition-colors">
+                            <td class="px-4 py-3 font-medium text-gray-900">O Senhor dos Anéis</td>
+                            <td class="px-4 py-3 text-gray-600">J.R.R. Tolkien</td>
+                            <td class="px-4 py-3 text-gray-600">HarperCollins</td>
+                            <td class="px-4 py-3 text-gray-600">1954</td>
+                            <td class="px-4 py-3">
+                                <span class="px-2 py-0.5 text-xs font-semibold rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200">Fantasia</span>
+                            </td>
+                            <td class="px-4 py-3 font-semibold text-gray-900">89.90</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="flex justify-start">
+                <button type="button" class="w-full sm:w-auto px-6 py-2.5 bg-slate-700 hover:bg-slate-800 text-white font-semibold text-sm rounded-lg shadow-sm hover:shadow-md transition-all uppercase tracking-wider">
+                    ALTERAR
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="bg-slate-900/90 backdrop-blur-md text-slate-400 text-xs py-6 mt-auto border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row justify-between items-center gap-4">
+            <div class="flex flex-col items-center sm:items-start gap-2">
+                <span class="font-medium text-slate-300">Já segue nossas páginas?</span>
+                <div class="flex gap-3">
+                    <a href="#" class="hover:opacity-80 transition-opacity"><img src="img/facebook.svg" alt="Facebook" class="w-5 h-5 filter invert opacity-75"></a>
+                    <a href="#" class="hover:opacity-80 transition-opacity"><img src="img/instagram.svg" alt="Instagram" class="w-5 h-5 filter invert opacity-75"></a>
+                    <a href="#" class="hover:opacity-80 transition-opacity"><img src="img/messenger.svg" alt="Messenger" class="w-5 h-5 filter invert opacity-75"></a>
+                    <a href="#" class="hover:opacity-80 transition-opacity"><img src="img/twiter.svg" alt="Twitter" class="w-5 h-5 filter invert opacity-75"></a>
+                    <a href="#" class="hover:opacity-80 transition-opacity"><img src="img/whatsapp.svg" alt="WhatsApp" class="w-5 h-5 filter invert opacity-75"></a>
+                </div>
+            </div>  
+            <p class="text-center sm:text-right">Copyright © 2026 - Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
